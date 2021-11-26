@@ -13,7 +13,7 @@
     background: #1B3A4B;
 }
 
-.right-side-form{
+.right-side-form {
     background: #EBEBEB;
 
 }
@@ -23,19 +23,36 @@
     margin: 0 auto;
 }
 
-.startup-abstract-image{
+.startup-abstract-image {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.create-site-btn{
+.create-site-btn {
     margin: 20px auto 20px auto;
     width: 93%;
 }
 
-.technologies-check-box-form-group{
+.technologies-check-box-form-group {
     margin-top: 20px;
+}
+
+#live-search-result {
+    display: none;
+    position: absolute;
+    top: 40px;
+    background: grey;
+    max-height: 80px;
+    width: 95%;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+#live-search-result span {
+    display: block;
+    padding: 0 0 0 10px;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1300px) {

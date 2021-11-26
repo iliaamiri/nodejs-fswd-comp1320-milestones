@@ -79,7 +79,30 @@ const showUserById = (req, res) => {
             }
         })
     }).catch(err => {
-        res.end(err)
+        res.end(err.toString())
+    })
+}
+
+const getIconByTitle = (req, res) => {
+    new Promise((resolve, reject) => {
+        const iconTitle = req.params.title;
+        if (typeof iconTitle !== 'string') {
+            return reject("Error: Icon does not exist");
+        }
+
+        database.searchByIconTitle(iconTitle)
+            .then(result => resolve(result))
+            .catch(err => reject(err))
+    }).then(result => {
+        res.end(JSON.stringify({
+            status: true,
+            icon: result
+        }));
+    }).catch(error => {
+        res.end(JSON.stringify({
+            status: false,
+            error: error
+        }))
     })
 }
 
@@ -96,5 +119,6 @@ function makeid(length) {
 
 module.exports = {
     formCreationSubmit,
-    showUserById
+    showUserById,
+    getIconByTitle
 };

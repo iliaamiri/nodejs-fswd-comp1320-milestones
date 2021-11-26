@@ -47,6 +47,25 @@ const selectById = (collectionName, id) => {
     })
 }
 
+const searchByIconTitle = (iconTitle) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(database_file, 'utf-8')
+            .then(data => {
+                const parsedData = JSON.parse(data);
+
+                const collectionArray = parsedData['skills'];
+
+                if (collectionArray === undefined){
+                    return reject('Icon does not exist');
+                }
+
+                const result = collectionArray.filter(row => (row.title.toLowerCase().includes(iconTitle.toLowerCase()) || row.title.toLowerCase() === iconTitle.toLowerCase()));
+
+                return (result.length >= 1) ? resolve(result) : reject("Icon does not exist");
+            }).catch(err => console.log(err))
+    })
+}
+
 const deleteById = (collectionName, id) => {
     return new Promise((resolve, reject) => {
         fs.readFile(database_file, 'utf-8')
@@ -75,5 +94,6 @@ const deleteById = (collectionName, id) => {
 module.exports = {
     insert,
     deleteById,
-    selectById
+    selectById,
+    searchByIconTitle
 }

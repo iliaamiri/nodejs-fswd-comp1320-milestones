@@ -24,7 +24,17 @@ app.post('/devCards/create', (req, res) => {
 
 app.get("/people/:id", (req, res) => {
     devCardController.showUserById(req, res)
-});
+})
+
+app.get("/getIcon/:title", (req, res) => {
+    devCardController.getIconByTitle(req, res)
+})
+
+app.get("/getIcon", (req, res) => {
+    res.end(JSON.stringify({
+        status: false
+    }))
+})
 
 app.get("/:id/photos", (req, res) => {
     const id = req.params.id;
