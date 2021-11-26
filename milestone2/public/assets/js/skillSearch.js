@@ -30,28 +30,32 @@ $(document).ready(() => {
                     console.log($(this).text());
                     $(this).click(function () {
                         let eachSpan = $(this);
-                        const formCheckBoxHTML = `<div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][${$(this).text()}]" value="${$(this).text()}" id="form-check-input-${$(this).text()}">
-                    <label class="form-check-label" for="form-check-input-${$(this).text()}">
-                      ${$(this).text()}
+                        getIcon(eachSpan.text()).then(skill => {
+                            skill = skill[0];
+
+                            const formCheckBoxHTML = `<div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][${eachSpan.text()}]" value="${skill.icon}" id="form-check-input-${eachSpan.text()}">
+                    <label class="form-check-label" for="form-check-input-${eachSpan.text()}">
+                      ${eachSpan.text()}
                     </label>
                   </div>`;
-                        let count = $("label").filter(function() {
-                            return $(this).text().trim().toLowerCase() === eachSpan.text().trim().toLowerCase();
-                        }).length
+                            let count = $("label").filter(function() {
+                                return $(this).text().trim().toLowerCase() === eachSpan.text().trim().toLowerCase();
+                            }).length
 
-                        if (count === 0) {
-                            if (leftSideFormCheckSkills.children().length - rightSideFormCheckSkills.children().length < 0) {
-                                leftSideFormCheckSkills.append(formCheckBoxHTML)
+                            if (count === 0) {
+                                if (leftSideFormCheckSkills.children().length - rightSideFormCheckSkills.children().length < 0) {
+                                    leftSideFormCheckSkills.append(formCheckBoxHTML)
+                                } else {
+                                    rightSideFormCheckSkills.append(formCheckBoxHTML)
+                                }
                             } else {
-                                rightSideFormCheckSkills.append(formCheckBoxHTML)
+                                console.log("This skill is already available to select");
                             }
-                        } else {
-                            console.log("This skill is already available to select");
-                        }
 
-                        searchInput.val("");
-                        liveSearchBox.empty();
+                            searchInput.val("");
+                            liveSearchBox.empty();
+                        });
                     })
                 })
             })
