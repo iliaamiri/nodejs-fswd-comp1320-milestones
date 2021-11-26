@@ -1,1 +1,70 @@
-{"users":[{"id":"54az3","fullName":"Armaan Dhanji","aboutMe":"Hi, my name is Armaan Dhanji but I'm better known by my nickname @armaand, and I'm a teacher in the School of Computing at BCIT.","knownTechnologies":["HTML","CSS","JS","Git","React","Node.js"],"githubUrl":"github.com/adhanji8","twitterUrl":"twitter.com/bcit","favoriteBooks":["The Lord of the Rings - J. R. R. Tolkien","Foundation Series - Isaac Asimov","Cracking the Coding Interview - Gayle Laakmann","Clean Code - Rob Martin","A Brief History of Time - Stephen Hawking"],"favoriteArtists":[]},{},{"id":"mR2v5","fullName":"adsff","aboutMe":"asdfadf","knownTechnologies":["html","php","css"],"githubUrl":"asdasdf","twitterUrl":"asdfa","favoriteBooks":["asdfas"]},{"id":"yH2sV","fullName":"adsff","aboutMe":"asdfadf","knownTechnologies":["html","php","css"],"githubUrl":"asdasdf","twitterUrl":"asdfa","favoriteBooks":["asdfas"]},{"id":"mDNEF","fullName":"ilia amiri","aboutMe":"ajsdfk a sdf koso shere khaales <p>inam ye paragraph</p> <b> too koonet </b>","knownTechnologies":{"html":"html5","php":"php"},"githubUrl":"http://google.com","twitterUrl":"http://google.com","favoriteBooks":["lord of the rings"," invincible"," spiderman"]},{"id":"lIBz0","fullName":"ilia amiri","aboutMe":"ajsdfk a sdf koso shere khaales <p>inam ye paragraph</p> <b> too koonet </b>","knownTechnologies":{"html":"html5","php":"php"},"githubUrl":"http://google.com","twitterUrl":"http://google.com","favoriteBooks":["lord of the rings"," invincible"," spiderman"]},{"id":"52D7v","fullName":"asdfasdf dds","aboutMe":"adfsd a df ads f sd asf ads as ads","knownTechnologies":{"css":"css3-alt","node_js":"node-js"},"githubUrl":"http://google.com","twitterUrl":"http://google.com","favoriteBooks":["asdfasd"," asdf  a"," as dfad ","afsdf"]},{"id":"bEs9g","fullName":"test test","aboutMe":"test testa esrta setase ","knownTechnologies":{"php":"php","Git":"git-alt","css":"css3-alt","node_js":"node-js","React":"react"},"githubUrl":"http://google.com","twitterUrl":"http://google.com","favoriteBooks":["lord of the rings"," invincible"," spiderman"]}],"skills":[{"title":"PHP","icon":"php"},{"title":"Node.JS","icon":"node-js"},{"title":"CSS","icon":"css3-alt"},{"title":"HTML","icon":"html5"},{"title":"JS","icon":"js"},{"title":"Sass","icon":"sass"},{"title":"Git","icon":"git-alt"},{"title":"Gulp","icon":"gulp"},{"title":"NPM","icon":"npm"},{"title":"React","icon":"react"}]}
+{
+  "users": [
+    {
+      "id": "54az3",
+      "fullName": "Armaan Dhanji",
+      "aboutMe": "Hi, my name is Armaan Dhanji but I'm better known by my nickname @armaand, and I'm a teacher in the School of Computing at BCIT.",
+      "knownTechnologies": [
+        "HTML",
+        "CSS",
+        "JS",
+        "Git",
+        "React",
+        "Node.js"
+      ],
+      "githubUrl": "github.com/adhanji8",
+      "twitterUrl": "twitter.com/bcit",
+      "favoriteBooks": [
+        "The Lord of the Rings - J. R. R. Tolkien",
+        "Foundation Series - Isaac Asimov",
+        "Cracking the Coding Interview - Gayle Laakmann",
+        "Clean Code - Rob Martin",
+        "A Brief History of Time - Stephen Hawking"
+      ],
+      "favoriteArtists": []
+    },
+    {}
+  ],
+  "skills": [
+    {
+      "title": "PHP",
+      "icon": "php"
+    },
+    {
+      "title": "Node.JS",
+      "icon": "node-js"
+    },
+    {
+      "title": "CSS",
+      "icon": "css3-alt"
+    },
+    {
+      "title": "HTML",
+      "icon": "html5"
+    },
+    {
+      "title": "JS",
+      "icon": "js"
+    },
+    {
+      "title": "Sass",
+      "icon": "sass"
+    },
+    {
+      "title": "Git",
+      "icon": "git-alt"
+    },
+    {
+      "title": "Gulp",
+      "icon": "gulp"
+    },
+    {
+      "title": "NPM",
+      "icon": "npm"
+    },
+    {
+      "title": "React",
+      "icon": "react"
+    }
+  ]
+}
