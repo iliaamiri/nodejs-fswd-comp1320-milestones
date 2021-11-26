@@ -19,7 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69850504-d8de-40e7-a32e-31ab096f359e" name="Default Changelist" comment="" />
+    <list default="true" id="69850504-d8de-40e7-a32e-31ab096f359e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/milestone2/controllers/devCardController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/milestone2/database_bakcup.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/milestone2/modules/database/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/milestone2/modules/database/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/milestone2/modules/database/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/milestone2/public/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/milestone2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/milestone2/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/milestone2/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/milestone2/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/milestone2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/milestone2/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/milestone2/views/createcard.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/milestone2/views/createcard.ejs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +39,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,8 +61,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="javascript.nodejs.core.library.configured.version" value="16.10.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/milestone2/public/assets/js" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\KINGREDBOLDER\Desktop\nodejs-fswd-comp1320-milestones\milestone2\public\assets\js" />
+      <recent name="C:\Users\KINGREDBOLDER\Desktop\nodejs-fswd-comp1320-milestones\milestone2" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -56,6 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1637298396372</updated>
       <workItem from="1637298397491" duration="450000" />
+      <workItem from="1637879648911" duration="12315000" />
     </task>
     <servers />
   </component>
@@ -72,5 +99,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1637883433871">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1637883433871" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1637887917155">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1637887917155" />
   </component>
 </project>
