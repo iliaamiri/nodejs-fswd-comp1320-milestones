@@ -10,42 +10,48 @@ $(document).ready(() => {
         getIcon(newValue)
             .then(result => {
                 result.map(item => {
+                    let spanAlreadyExists = false;
                     $(`span:contains("${item.title}")`).each(function () {
                         if (item.title === $(this).text()) {
-                            $(this).remove();
-                            $(this).unbind("click");
+                            spanAlreadyExists = true;
                         }
                     })
 
-                    liveSearchBox.append(`<span>${item.title}</span>`)
+                    if (!spanAlreadyExists) {
+                        liveSearchBox.append(`<span>${item.title}</span>`)
 
-                    liveSearchBox.children("span").each(function () {
-                        console.log($(this) + " :  akldsfjasdklfj");
-                        $(this).click(function () {
-                            const formCheckBoxHTML = `<div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][${item.title}]" value="${item.icon}" id="form-check-input-${item.title}">
-                    <label class="form-check-label" for="form-check-input-${item.title}">
-                      ${item.title}
+
+                    }
+                    return item;
+                })
+            })
+            .then(() => {
+                liveSearchBox.children("span").each(function () {
+                    console.log($(this).text());
+                    $(this).click(function () {
+                        let eachSpan = $(this);
+                        const formCheckBoxHTML = `<div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][${$(this).text()}]" value="${$(this).text()}" id="form-check-input-${$(this).text()}">
+                    <label class="form-check-label" for="form-check-input-${$(this).text()}">
+                      ${$(this).text()}
                     </label>
                   </div>`;
-                            let count = $("label").filter(function() {
-                                console.log(item.title.toLowerCase() + "  : " + $(this).text().trim().toLowerCase() === item.title.toLowerCase())
-                                return $(this).text().trim().toLowerCase() === item.title.toLowerCase();
-                            }).length
+                        let count = $("label").filter(function() {
+                            return $(this).text().trim().toLowerCase() === eachSpan.text().trim().toLowerCase();
+                        }).length
 
-                            if (count === 0) {
-                                if (leftSideFormCheckSkills.children().length - rightSideFormCheckSkills.children().length < 0) {
-                                    leftSideFormCheckSkills.append(formCheckBoxHTML)
-                                } else {
-                                    rightSideFormCheckSkills.append(formCheckBoxHTML)
-                                }
+                        if (count === 0) {
+                            if (leftSideFormCheckSkills.children().length - rightSideFormCheckSkills.children().length < 0) {
+                                leftSideFormCheckSkills.append(formCheckBoxHTML)
                             } else {
-                                console.log("This skill is already available to select");
+                                rightSideFormCheckSkills.append(formCheckBoxHTML)
                             }
+                        } else {
+                            console.log("This skill is already available to select");
+                        }
 
-                            searchInput.val($(this).text());
-                            liveSearchBox.empty();
-                        })
+                        searchInput.val("");
+                        liveSearchBox.empty();
                     })
                 })
             })
