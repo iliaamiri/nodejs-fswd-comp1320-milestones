@@ -28,7 +28,7 @@ const devCardController = (req, res) => {
             const skills = Object.keys(postParams.knownTechnologies);
             const githubUrl = postParams.githubUrl;
             const twitterUrl = postParams.twitterUrl;
-            const favouriteBooks = postParams.favouriteBooks.split(',').map(item => item.trim());
+            const favouriteBooks = postParams.favouriteBooks.split(',');
 
             const newUser = {
                 id: id,
