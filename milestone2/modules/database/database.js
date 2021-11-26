@@ -28,14 +28,30 @@ const insert = (collectionName, jsonData) => {
     })
 }
 
-const deleteById = (collectionName, id) => {
+const selectById = (collectionName, id) => {
     return new Promise((resolve, reject) => {
-        if (typeof id !== 'string') {
-            return reject("Database DeleteById Error: Id value is not a valid id");
-        }
         fs.readFile(database_file, 'utf-8')
             .then(data => {
-                let parsedData = JSON.parse(data);
+                const parsedData = JSON.parse(data);
+
+                const collectionArray = parsedData[collectionName];
+
+                if (collectionArray === undefined){
+                    return reject('User does not exist');
+                }
+
+                const result = collectionArray.filter(row => row.id === id);
+
+                return (result.length === 1) ? resolve(result[0]) : reject("User does not exist");
+            }).catch(err => console.log(err))
+    })
+}
+
+const deleteById = (collectionName, id) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(database_file, 'utf-8')
+            .then(data => {
+                const parsedData = JSON.parse(data);
 
                 return {
                     data: parsedData,
@@ -58,5 +74,6 @@ const deleteById = (collectionName, id) => {
 
 module.exports = {
     insert,
-    deleteById
+    deleteById,
+    selectById
 }

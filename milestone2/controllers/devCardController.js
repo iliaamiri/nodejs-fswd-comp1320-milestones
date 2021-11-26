@@ -1,10 +1,10 @@
 const database = require('../modules/database/database');
 const userCollectionName = 'users';
 
-const devCardController = (req, res) => {
-    return new Promise((resolve, reject) => {
+const formCreationSubmit = (req, res) => {
+    new Promise((resolve, reject) => {
         const postParams = req.body['mainForm'];
-        console.log(postParams)
+
         if (postParams === undefined) {
             return reject("Please enter your full name");
         }
@@ -25,7 +25,7 @@ const devCardController = (req, res) => {
             const id = makeid(5);
             const fullName = postParams.fullName;
             const aboutMe = postParams.aboutMe;
-            const skills = Object.keys(postParams.knownTechnologies);
+            const skills = postParams.knownTechnologies;
             const githubUrl = postParams.githubUrl;
             const twitterUrl = postParams.twitterUrl;
             const favouriteBooks = postParams.favouriteBooks.split(',');
@@ -41,21 +41,60 @@ const devCardController = (req, res) => {
             }
 
             database.insert(userCollectionName, newUser)
-                .then(() => resolve(''))
+                .then(() => resolve(newUser.id))
                 .catch(err => reject(err));
         }
+    }).then((id) => {
+        res.end(JSON.stringify({
+            status: true,
+            msg: 'success',
+            id: id
+        }))
+    }).catch(err => {
+        res.end(JSON.stringify({
+            status: false,
+            msg: err.toString()
+        }))
+    });
+}
+
+const showUserById = (req, res) => {
+    new Promise((resolve, reject) => {
+        const userId = req.params.id;
+        if (typeof userId !== 'string') {
+            return reject("Error: Id value is not a valid id");
+        }
+
+        database.selectById(userCollectionName, userId)
+            .then((user) => resolve(user))
+            .catch((error) => reject(error))
+
+    }).then(userData => {
+        let firstName = userData.fullName.substr(0, userData.fullName.indexOf(" "));
+
+        res.render('people', {
+            userData: {
+                all: userData,
+                firstName: (firstName !== "") ? firstName : userData.fullName
+            }
+        })
+    }).catch(err => {
+        res.end(err)
     })
 }
 
 function makeid(length) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
+    for (var i = 0; i < length; i++) {
         result += characters.charAt(Math.floor(Math.random() *
             charactersLength));
     }
     return result;
 }
 
-module.exports = devCardController;
+module.exports = {
+    formCreationSubmit,
+    showUserById
+};

@@ -14,7 +14,7 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/9488bfbae2.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>\
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
   </head>
@@ -32,25 +32,25 @@
           </header>
           <form method="post" class="row main-form" id="main-form">
             <div class="form-group">
-              <label for=""></label>
-              <input type="text" class="form-control" name="mainForm[fullName]" placeholder="Your Full-name">
+              <label for="fullNameInput"></label>
+              <input type="text" id="fullNameInput" class="form-control" name="mainForm[fullName]" placeholder="Your Full-name">
             </div>
             <div class="form-group">
-              <label for=""></label>
-              <textarea class="form-control" rows="3" name="mainForm[aboutMe]" placeholder="Your Bio"></textarea>
+              <label for="bioInput"></label>
+              <textarea class="form-control" id="bioInput" rows="3" name="mainForm[aboutMe]" placeholder="Your Bio"></textarea>
             </div>
             <div class="form-group technologies-check-box-form-group">
               <h5 class="header-center">Technologies You Know</h5>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][html]" id="form-check-input-1">
+                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][html]" value="html5" id="form-check-input-1">
                     <label class="form-check-label" for="form-check-input-1">
                       HTML
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][php]" id="form-check-input-2">
+                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][php]" value="php" id="form-check-input-2">
                     <label class="form-check-label" for="form-check-input-2">
                       PHP
                     </label>
@@ -58,13 +58,13 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][css]" id="form-check-input-3">
+                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][css]" value="css3-alt" id="form-check-input-3">
                     <label class="form-check-label" for="form-check-input-3">
                       CSS
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][node_js]" id="form-check-input-4">
+                    <input class="form-check-input" type="checkbox" name="mainForm[knownTechnologies][node_js]" value="node-js" id="form-check-input-4">
                     <label class="form-check-label" for="form-check-input-4">
                       Node.js
                     </label>
